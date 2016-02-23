@@ -10,5 +10,16 @@ module HangoutsJsonParser
 		def profile
 			"https://plus.google.com/#{id}"
 		end
+
+		def initialize id, name
+			@id = id
+			@name = name
+		end
+
+		# Creates a user from participant data
+		def self.from_participant_data data
+			# TODO: Use the Google+ API to actually look up this person?
+			User.new data['id']['gaia_id'], data['fallback_name']
+		end
 	end
 end

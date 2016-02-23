@@ -18,7 +18,7 @@ module HangoutsJsonParser
 		# @param state [Hash] conversation_state
 		# @return [Conversation] resulting Conversation
 		def self.from_state state
-			Conversation.new state['conversation']['id']['id'], type_from_string(state['conversation']['type']), []
+			Conversation.new state['conversation']['id']['id'], type_from_string(state['conversation']['type']), state['conversation']['participant_data'].map(&User.method(:from_participant_data))
 		end
 
 		private
