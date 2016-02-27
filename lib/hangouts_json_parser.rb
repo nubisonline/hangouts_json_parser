@@ -1,5 +1,10 @@
+require "ruby_dig"
+
 require "hangouts_json_parser/version"
 require "hangouts_json_parser/user"
+require "hangouts_json_parser/attachment"
+require "hangouts_json_parser/attachment/location"
+require "hangouts_json_parser/attachment/photo"
 require "hangouts_json_parser/message"
 require "hangouts_json_parser/conversation"
 
